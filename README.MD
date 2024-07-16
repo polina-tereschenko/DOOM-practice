@@ -1,10 +1,6 @@
-# WebSite
-
-## Development
-
-### Get started
+# Get started
 
 - python -m venv .venv
 - . .venv/bin/activate
-- pip install Flask flask-sqlalchemy flask-login pymysql
-- flask --app project run
+- pip install pygame
+- python main.py
