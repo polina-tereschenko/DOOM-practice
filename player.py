@@ -24,11 +24,11 @@ class Player:
             dx += -speed_cos
             dy += -speed_sin
         if keys[pg.K_a]:
-            dx += speed_cos
-            dy += -speed_sin
+            dx += speed_sin
+            dy += -speed_cos
         if keys[pg.K_d]:
-            dx += -speed_cos
-            dy += speed_sin
+            dx += -speed_sin
+            dy += speed_cos
 
         self.cheak_wall_collision(dx, dy)
 
@@ -42,9 +42,10 @@ class Player:
         return (x, y) not in self.game.map.world_map
 
     def cheak_wall_collision(self, dx, dy):
-        if self.cheak_wall(int(self.x + dx), int(self.y)):
+        scale = PLAYER_SIZE_SCALE / self.game.delta_time
+        if self.cheak_wall(int(self.x + dx * scale), int(self.y)):
             self.x += dx
-        if self.cheak_wall(int(self.x), int(self.y + dy)):
+        if self.cheak_wall(int(self.x), int(self.y + dy * scale)):
             self.y += dy
 
     def draw(self):
