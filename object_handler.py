@@ -5,7 +5,7 @@ class ObjectHandler:
         self.game = game
         self.sprite_list = []
         self.static_sprite_path = 'resources/sprites/static_sprites/'
-        self.animated_sprite_path = 'resources/sprites/animated_sprites'
+        self.animated_sprite_path = 'resources/sprites/animated_sprites/'
         add_sprite = self.add_sprite
         
         add_sprite(SpriteObject(game))
